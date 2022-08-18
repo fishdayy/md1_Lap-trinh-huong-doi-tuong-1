@@ -5,25 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="500px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
 
 </body>
 </html>
 <script>
-  function createRectangle(){
-      let canvas = document.getElementById('myCanvas');
-      let context = canvas.getContext('2d');
-      let height = Math.random() * window.innerHeight
-      let width = Math.random() * window.innerWidth
-      let perimeterRectangle = (height + width) * 2
-      let areaRectangle = height * width
+ class HCN{
+     cd;
+     cr;
+     x;
+     y;
 
-      context.beginPath()
-      context.rect(Math.random(),Math.random(),height,width)
-      context.fill();
-      context.closePath()
-
-      document.write('<br>'+'chu vi bang: ' + perimeterRectangle + '<br>' + 'dien tich bang: ' + areaRectangle) ;
-  }
-  createRectangle()
+     tinhCV(){
+         return (this.cd + this.cr)*2;
+     }
+     tinhDT(){
+         return this.cd * this.cr;
+     }
+     ve(){
+         let ctx = document.getElementById('myCanvas').getContext('2d');
+         ctx.beginPath();
+         ctx.fillRect(this.x, this.y, this.cd, this.cr);
+         ctx.closePath()
+     }
+ }
+ let h1 = new HCN();
+ h1.cr = 300
+ h1.cd = 400
+ h1.x = 10
+ h1.y = 10
+ h1.ve()
+ // alert(h1.tinhCV());
+ // alert(h1.tinhDT());
 </script>
