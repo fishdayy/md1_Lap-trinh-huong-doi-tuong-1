@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+</body>
+</html>
+<script>
+  function createRectangle(){
+      let canvas = document.getElementById('myCanvas');
+      let context = canvas.getContext('2d');
+      let height = Math.random() * window.innerHeight
+      let width = Math.random() * window.innerWidth
+      let perimeterRectangle = (height + width) * 2
+      let areaRectangle = height * width
+
+      context.beginPath()
+      context.rect(Math.random(),Math.random(),height,width)
+      context.fill();
+      context.closePath()
+
+      document.write('<br>'+'chu vi bang: ' + perimeterRectangle + '<br>' + 'dien tich bang: ' + areaRectangle) ;
+  }
+  createRectangle()
+</script>
